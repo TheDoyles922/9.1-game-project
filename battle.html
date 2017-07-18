@@ -8,14 +8,20 @@
   <body>
     <div class="container">
       <div class="display">
+        <div class="player img-margin">
+          <img id="playerImg" src="./images/character1.png" alt="">
+        </div>
         <h1>VS</h1>
+        <div class="player img-margin">
+          <img id="goblinImg" src="./images/character4.jpg" alt="">
+        </div>
       </div>
       <section class="flex">
         <div class="chr-display border">
           <h1>Hero</h1>
           <h3>Name: <span id="hero-name"></span></h3>
           <h3>Class: <span id="hero-class"></span></h3>
-          <h3>HP: <span id="hero-currentHealth"></span>/<span id="hero-maxHealth"></span> </h3>
+          <h3>HP: <span id="hero-currentHealth"></span>/<span id="hero-maxHealth"></span></h3>
 
         </div>
         <div class="chr-display border">
@@ -25,6 +31,7 @@
           <h3>HP: <span id="enemy-currentHealth"></span>/ <span id="enemy-maxHealth"></span></h3>
 
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="./index.js" charset="utf-8"></script>
       </section>
     </div>

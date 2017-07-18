@@ -9,11 +9,10 @@
 
 
   class Character {
-    constructor(type, currentHealth, maxHealth, img) {
+    constructor(type, currentHealth, maxHealth) {
       this.type = type;
       this.currentHealth = currentHealth;
       this.maxHealth = maxHealth;
-      this.img = img;
     }
   };
 
@@ -41,6 +40,5 @@
   document.getElementById('enemy-class').innerHTML = goblin.type;
   document.getElementById('enemy-maxHealth').innerHTML = goblin.maxHealth;
   document.getElementById('enemy-currentHealth').innerHTML = goblin.currentHealth;
-
 
 // }());
