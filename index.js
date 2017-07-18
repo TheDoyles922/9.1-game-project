@@ -1,6 +1,9 @@
 // (function () {
   // 'use strict';
 
+
+  console.log('dom element', $('#enemy-currentHealth')[0]);
+
   function randomNum() {
     // from 1 to 10
     return Math.floor((Math.random() * 10) + 1);
@@ -20,10 +23,22 @@
     console.log(opponent.currentHealth);
     let heroAttack = randomNum();
     let enemyAttack = randomNum();
+    $('#enemy-currentHealth')[0].innerHTML = goblin.currentHealth -= heroAttack;
+    $('#hero-currentHealth')[0].innerHTML = fighter.currentHealth -= enemyAttack;
+    if(goblin.currentHealth <= 0) {
+      window.alert('You Win!!')
+    } else if (fighter.currentHealth <= 0) {
+      window.alert('You Lose!!')
+    }
 
     console.log(opponent.currentHealth);
-    document.getElementById('enemy-currentHealth').innerHTML = goblin.currentHealth -= heroAttack;
-    document.getElementById('hero-currentHealth').innerHTML = fighter.currentHealth -= enemyAttack;
+
+
+  };
+  let attackButton = document.getElementById('attack');
+  attackButton.onclick = () => {
+    fighter.attack(goblin);
+
   };
 
   let fighter = new Character("Fighter", 100, 100);
