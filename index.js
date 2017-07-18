@@ -6,11 +6,14 @@
     return Math.floor((Math.random() * 10) + 1);
   };
 
+
+
   class Character {
-    constructor(type, currentHealth, maxHealth) {
+    constructor(type, currentHealth, maxHealth, img) {
       this.type = type;
       this.currentHealth = currentHealth;
       this.maxHealth = maxHealth;
+      this.img = img;
     }
   };
 
@@ -30,10 +33,10 @@
   let goblin = new Character("Goblin", 100, 100);
 
 
-  // $("form").submit(function() {
-  //   let name = $("#name").text();
-  //
-  //   let
-  // });
+  $("form").submit(function() {
+
+    
+
+  });
 
 // }());
