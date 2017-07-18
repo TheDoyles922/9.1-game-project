@@ -4,40 +4,30 @@
     <meta charset="utf-8">
     <title>Battle</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container white">
       <div class="display">
         <div class="player img-margin">
           <img id="playerImg" src="./images/character1.png" alt="">
+          <h4 class="center-align">HP: <span id="hero-currentHealth"></span>/<span id="hero-maxHealth"></span></h4>
+          <h4 class="center-align"><span id="hero-class"></span></h4>
+          <!-- <h3 class="center-align">Hero</h3> -->
         </div>
         <div class="vertalign">
-          <h1>VS</h1>
-          <button type="button" name="button" id="attack">Attack!</button>
+          <h1 class="blue-text text-darken-2 center-align">vs</h1>
+          <button class="btn red" type="button" name="button" id="attack">Attack!</button>
         </div>
         <div class="player img-margin">
           <img id="goblinImg" src="./images/character4.jpg" alt="">
+          <h4 class="center-align">HP: <span id="enemy-currentHealth"></span>/<span id="enemy-maxHealth"></span></h4>
+          <h4 class="center-align"><span id="enemy-class"></span></h4>
+          <!-- <h3 class="center-align">Enemy</h3> -->
         </div>
       </div>
-
-      <section class="flex">
-        <div class="chr-display border">
-          <h1>Hero</h1>
-          <h3>Name: <span id="hero-name"></span></h3>
-          <h3>Class: <span id="hero-class"></span></h3>
-          <h3>HP: <span id="hero-currentHealth"></span>/<span id="hero-maxHealth"></span></h3>
-
-        </div>
-        <div class="chr-display border">
-          <h1>Enemy</h1>
-          <h3>Name: <span id="enemy-name"></span></h3>
-          <h3>Class: <span id="enemy-class"></span></h3>
-          <h3>HP: <span id="enemy-currentHealth"></span>/ <span id="enemy-maxHealth"></span></h3>
-
-        </div>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script src="./index.js" charset="utf-8"></script>
-      </section>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="./index.js" charset="utf-8"></script>
   </body>
 </html>
