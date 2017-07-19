@@ -92,6 +92,11 @@
 
   let goblin = new Character("Goblin", 100, 100);
 
+  let zombie = new Character("Zombie", 100, 100);
+
+  let ogre = new Character("Ogre", 100, 100);
+
+
 
   // document.getElementById('hero-maxHealth').innerHTML = fighter.maxHealth;
   $('#enemy-class')[0].innerHTML = goblin.type;
