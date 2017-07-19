@@ -1,6 +1,9 @@
 // (function () {
   // 'use strict';
 
+  $(document).ready(function() {
+    $('select').material_select();
+  });
 
   console.log('dom element', $('#enemy-currentHealth')[0]);
 
@@ -66,5 +69,31 @@
   document.getElementById('enemy-class').innerHTML = goblin.type;
   // document.getElementById('enemy-maxHealth').innerHTML = goblin.maxHealth;
   document.getElementById('enemy-currentHealth').innerHTML = goblin.currentHealth;
+
+  $(function() {
+    $("#chr-select").on("change",function() {
+      let chr = $(this);
+      console.log(chr);
+      if (chr[0].value == 'fighter') {
+        console.log(chr[0].value);
+        console.log('fighter');
+        return;
+      } else if (chr[0].value == 'wizard') {
+        console.log(chr[0].value);
+        console.log('wizard');
+      } else if (chr[0].value == 'thief') {
+        console.log(chr[0].value);
+        console.log('thief');
+      }
+
+      // if (period=="") return; // please select - possibly you want something else here
+      //
+      // var report = "script/"+((period == "daily")?"d":"m")+"_report.php";
+      // loadXMLDoc(report,'responseTag');
+      // $('#responseTag').show();
+      // $('#list_report').hide();
+      // $('#formTag').hide();
+    });
+});
 
 // }());
