@@ -41,11 +41,15 @@
     }
 
     if(goblin.currentHealth <= 0) {
-      window.alert('You Win!!');
-      window.location.reload();
+      // window.alert('You Win!!');
+      // window.location.reload();
+      $("#enemy").fadeOut();
+      $("#center").fadeOut();
     } else if (fighter.currentHealth <= 0) {
-      window.alert('You Lose!!');
-      window.location.reload();
+      // window.alert('You Lose!!');
+      // window.location.reload();
+      $("#hero").fadeOut();
+      $("#center").fadeOut();
     }
 
   };
@@ -53,6 +57,7 @@
   let attackButton = document.getElementById('attack');
     attackButton.onclick = () => {
     fighter.attack(goblin);
+    $("#form").fadeOut();
   };
 
   let fighter = new Character("Fighter", 100, 100);
@@ -94,13 +99,6 @@
         $('#playerImg')[0].src = 'https://s-media-cache-ak0.pinimg.com/originals/c4/8e/9c/c48e9c87807c4f1f02632a6cb6ce7b46.jpg';
       }
 
-      // if (period=="") return; // please select - possibly you want something else here
-      //
-      // var report = "script/"+((period == "daily")?"d":"m")+"_report.php";
-      // loadXMLDoc(report,'responseTag');
-      // $('#responseTag').show();
-      // $('#list_report').hide();
-      // $('#formTag').hide();
     });
 });
 
