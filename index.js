@@ -84,12 +84,21 @@
     let randomEnemy = randomNum();
 
     if (randomEnemy <= 3) {
+      $('#enemyHealth')[0].innerHTML = 'HP: ';
+      $('#enemy-maxHealth')[0].innerHTML = '/' + goblin.maxHealth;
+      $('#enemy-currentHealth')[0].innerHTML = goblin.currentHealth;
       $('#enemy-class')[0].innerHTML = goblin.type;
       $('#enemyImg')[0].src = 'https://media.giphy.com/media/QZgUpceTmclgI/giphy.gif';
     } else if (randomEnemy <= 6) {
+      $('#enemyHealth')[0].innerHTML = 'HP: ';
+      $('#enemy-currentHealth')[0].innerHTML = zombie.currentHealth;
+      $('#enemy-maxHealth')[0].innerHTML = '/' + zombie.maxHealth;
       $('#enemy-class')[0].innerHTML = zombie.type;
       $('#enemyImg')[0].src = 'https://media.giphy.com/media/13bD1lqmU6fRbq/giphy.gif';
-    } else if(randomEnemy < 11){
+    } else {
+      $('#enemyHealth')[0].innerHTML = 'HP: ';
+      $('#enemy-currentHealth')[0].innerHTML = ogre.currentHealth;
+      $('#enemy-maxHealth')[0].innerHTML = '/' + ogre.maxHealth;
       $('#enemy-class')[0].innerHTML = ogre.type;
       $('#enemyImg')[0].src = 'http://33.media.tumblr.com/88b452b82d1120924cddda2873fae1e1/tumblr_nab7ibRLcT1qlp9j9o3_500.gif';
     }
