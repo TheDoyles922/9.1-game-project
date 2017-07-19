@@ -5,24 +5,25 @@
     <title>Battle</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Satisfy" rel="stylesheet">
   </head>
   <body>
     <div class="container white">
       <div class="display">
         <div class="player img-margin">
-          <img id="playerImg" src="./images/character1.png" alt="">
-          <h4 class="center-align">HP: <span id="hero-currentHealth"></span>/<span id="hero-maxHealth"></span></h4>
-          <h4 class="center-align"><span id="hero-class"></span></h4>
+          <img class="green-box" id="playerImg" src="./images/character1.png" alt="">
+          <h4 class="center-align">HP: <span id="hero-currentHealth"></span>%</h4>
+          <h4 id="hero-class" class="center-align"></h4>
           <!-- <h3 class="center-align">Hero</h3> -->
         </div>
         <div class="vertalign">
-          <h4 class="blue-text text-darken-4 center-align"><i>versus</i></h4>
+          <h3 class="versus blue-text text-darken-4 center-align">versus</h3>
           <button class="vertalign btn yellow black-text" type="button" name="button" id="attack">Attack!</button>
         </div>
         <div class="player img-margin">
-          <img id="goblinImg" src="./images/character4.jpg" alt="">
-          <h4 class="center-align">HP: <span id="enemy-currentHealth"></span>/<span id="enemy-maxHealth"></span></h4>
-          <h4 class="center-align"><span id="enemy-class"></span></h4>
+          <img class="green-box" id="goblinImg" src="./images/character4.jpg" alt="">
+          <h4 class="center-align">HP: <span id="enemy-currentHealth">100</span>%</h4>
+          <h4 id="enemy-class" class="center-align">Goblin</h4>
           <!-- <h3 class="center-align">Enemy</h3> -->
         </div>
       </div>

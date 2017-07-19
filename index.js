@@ -29,10 +29,13 @@
     if (fighter.currentHealth > goblin.currentHealth) {
       $('#playerImg')[0].setAttribute('class', 'green-box');
       $('#goblinImg')[0].setAttribute('class', 'red-box');
-    } else {
+    } else if (fighter.currentHealth < goblin.currentHealth) {
       $('#playerImg')[0].setAttribute('class', 'red-box');
       $('#goblinImg')[0].setAttribute('class', 'green-box');
-    };
+    } else if (fighter.currentHealth === goblin.currentHealth) {
+      $('#playerImg')[0].setAttribute('class', 'green-box');
+      $('#goblinImg')[0].setAttribute('class', 'green-box');
+    }
 
     if(goblin.currentHealth <= 0) {
       window.alert('You Win!!');
@@ -42,14 +45,11 @@
       window.location.reload();
     }
 
-    console.log(opponent.currentHealth);
-
-
   };
-  let attackButton = document.getElementById('attack');
-  attackButton.onclick = () => {
-    fighter.attack(goblin);
 
+  let attackButton = document.getElementById('attack');
+    attackButton.onclick = () => {
+    fighter.attack(goblin);
   };
 
   let fighter = new Character("Fighter", 100, 100);
@@ -62,9 +62,9 @@
 
   document.getElementById('hero-class').innerHTML = fighter.type;
   document.getElementById('hero-currentHealth').innerHTML = fighter.currentHealth;
-  document.getElementById('hero-maxHealth').innerHTML = fighter.maxHealth;
+  // document.getElementById('hero-maxHealth').innerHTML = fighter.maxHealth;
   document.getElementById('enemy-class').innerHTML = goblin.type;
-  document.getElementById('enemy-maxHealth').innerHTML = goblin.maxHealth;
+  // document.getElementById('enemy-maxHealth').innerHTML = goblin.maxHealth;
   document.getElementById('enemy-currentHealth').innerHTML = goblin.currentHealth;
 
 // }());

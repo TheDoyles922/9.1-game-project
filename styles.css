@@ -34,3 +34,14 @@ img {
 .green-box {
   box-shadow: 0 0 5px 0 #4caf50, 0 0 50px 0 #4caf50;
 }
+
+.versus {
+  font-family: 'Satisfy', cursive;
+}
+
+span {
+  font-family: 'Autowide';
+}
+h4 {
+  font-family: 'Autowide';
+}
