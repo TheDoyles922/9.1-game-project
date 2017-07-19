@@ -8,19 +8,20 @@
     <link href="https://fonts.googleapis.com/css?family=Audiowide|Satisfy" rel="stylesheet">
   </head>
   <body class="black">
-    <div id="form" class="container input-field">
+    <div id="form" class="container input-field flex justify-center">
       <select id="chr-select" class="white-text" name="">
         <option value="" disabled selected>Choose your hero</option>
         <option value="fighter">fighter</option>
         <option value="wizard">wizard</option>
         <option value="thief">thief</option>
       </select>
+      <button id="startButton" class="btn grey darken-4" type="button" name="button">Start</button>
     </div>
     <h1 class="deathFont black red-text text-darken center-align">Battle!</h1>
     <div class="container black">
       <div class="display">
         <div id="hero" class="player img-margin">
-          <img class="green-box" id="playerImg" src="https://slm-assets1.secondlife.com/assets/12181178/lightbox/Superhero_silhouette__Superhero_Collection.jpg?1440171439" alt="">
+          <img class="white-box" id="playerImg" src="https://slm-assets1.secondlife.com/assets/12181178/lightbox/Superhero_silhouette__Superhero_Collection.jpg?1440171439" alt="">
           <h4 class="white-text center-align">HP: <span id="hero-currentHealth">100</span>%</h4>
           <h4 id="hero-class" class="white-text center-align">Choose a Hero</h4>
           <!-- <h3 class="center-align">Hero</h3> -->
@@ -31,7 +32,7 @@
         </div>
         <div id="enemy" class="player img-margin">
 
-          <img class="green-box" id="goblinImg" src="http://snakehillgames.files.wordpress.com/2013/10/zombie_horizontalpreview_grey2.gif" alt="">
+          <img class="white-box" id="goblinImg" src="http://snakehillgames.files.wordpress.com/2013/10/zombie_horizontalpreview_grey2.gif" alt="">
           <h4 class="white-text center-align">HP: <span id="enemy-currentHealth">100</span>%</h4>
           <h4 id="enemy-class" class="white-text center-align">Goblin</h4>
           <!-- <h3 class="center-align">Enemy</h3> -->

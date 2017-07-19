@@ -8,6 +8,10 @@
   display: flex;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .display {
   display: flex;
   justify-content: space-around;
@@ -33,6 +37,10 @@ img {
 
 .green-box {
   box-shadow: 0 0 100px 0 #4caf50;
+}
+
+.white-box {
+  box-shadow: 0 0 100px 0 #fff;
 }
 
 .versus {
