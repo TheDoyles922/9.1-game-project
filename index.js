@@ -6,6 +6,7 @@
   });
 
   $("#attack").hide();
+  $('#playAgain').hide();
 
   console.log('dom element', $('#enemy-currentHealth')[0]);
 
@@ -47,17 +48,24 @@
       // window.location.reload();
       $("#enemy").fadeOut();
       $("#center").fadeOut();
+      $('#message')[0].innerHTML = 'You Win!'
+      $('#playAgain').show();
+      console.log(message.innerHTML);
     } else if (fighter.currentHealth <= 0) {
       // window.alert('You Lose!!');
       // window.location.reload();
       $("#hero").fadeOut();
       $("#center").fadeOut();
+      $('#message')[0].innerHTML = 'You Lose!'
+      $('#playAgain').show();
+      console.log(message.innerHTML);
     }
 
   };
 
   let attackButton = document.getElementById('attack');
   let startButton = document.getElementById('startButton');
+  let playAgain = document.getElementById('playAgain');
 
 
   attackButton.onclick = () => {
@@ -68,6 +76,10 @@
     console.log("working?");
     $("#form").hide();
     $("#attack").fadeIn(8000);
+  };
+
+  playAgain.onclick = () => {
+    window.location.reload();
   };
 
 
