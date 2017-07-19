@@ -71,3 +71,7 @@ h4 {
 .play-again {
   margin-top: 1%;
 }
+
+#attack {
+  transition: none;
+}
