@@ -7,24 +7,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Audiowide|Satisfy" rel="stylesheet">
   </head>
-  <body>
+  <body class="black">
     <div class="container input-field">
-      <h1>Battle!</h1>
-        <select id="chr-select" class="" name="">
-          <option value="" disabled selected>Choose your hero</option>
-          <option value="fighter">fighter</option>
-          <option value="wizard">wizard</option>
-          <option value="thief">thief</option>
-        </select>
+      <select id="chr-select" class="white-text" name="">
+        <option value="" disabled selected>Choose your hero</option>
+        <option value="fighter">fighter</option>
+        <option value="wizard">wizard</option>
+        <option value="thief">thief</option>
+      </select>
+
+      <h1 class="deathFont black red-text text-darken center-align">Battle!</h1>
+
         <!-- <input type="submit" name="" value="submit"> -->
 
     </div>
-    <div class="container white">
+    <div class="container black">
       <div class="display">
         <div class="player img-margin">
           <img class="green-box" id="playerImg" src="./images/character1.png" alt="">
-          <h4 class="center-align">HP: <span id="hero-currentHealth"></span>%</h4>
-          <h4 id="hero-class" class="center-align"></h4>
+          <h4 class="white-text center-align">HP: <span id="hero-currentHealth"></span>%</h4>
+          <h4 id="hero-class" class="white-text center-align"></h4>
           <!-- <h3 class="center-align">Hero</h3> -->
         </div>
         <div class="vertalign">
@@ -33,8 +35,8 @@
         </div>
         <div class="player img-margin">
           <img class="green-box" id="goblinImg" src="./images/character4.jpg" alt="">
-          <h4 class="center-align">HP: <span id="enemy-currentHealth">100</span>%</h4>
-          <h4 id="enemy-class" class="center-align">Goblin</h4>
+          <h4 class="white-text center-align">HP: <span id="enemy-currentHealth">100</span>%</h4>
+          <h4 id="enemy-class" class="white-text center-align">Goblin</h4>
           <!-- <h3 class="center-align">Enemy</h3> -->
         </div>
       </div>

@@ -28,11 +28,11 @@ img {
 }
 
 .red-box {
-  box-shadow: 0 0 5px 0 #f44336, 0 0 50px 0 #f44336;
+  box-shadow: 0 0 100px 0 #f44336;
 }
 
 .green-box {
-  box-shadow: 0 0 5px 0 #4caf50, 0 0 50px 0 #4caf50;
+  box-shadow: 0 0 100px 0 #4caf50;
 }
 
 .versus {
@@ -44,4 +44,18 @@ span {
 }
 h4 {
   font-family: 'Autowide';
+}
+
+@font-face {
+  font-family: 'Deathrattle';
+  src: url(deathrattlebb_reg.ttf);
+}
+
+.deathFont {
+  font-family: 'Deathrattle';
+  font-size: 100px;
+}
+
+.img-placeholder {
+  color: #B4B4B4;
 }
