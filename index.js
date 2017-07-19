@@ -63,12 +63,11 @@
 
   let goblin = new Character("Goblin", 100, 100);
 
-  document.getElementById('hero-class').innerHTML = fighter.type;
-  document.getElementById('hero-currentHealth').innerHTML = fighter.currentHealth;
+
   // document.getElementById('hero-maxHealth').innerHTML = fighter.maxHealth;
-  document.getElementById('enemy-class').innerHTML = goblin.type;
+  $('#enemy-class')[0].innerHTML = goblin.type;
   // document.getElementById('enemy-maxHealth').innerHTML = goblin.maxHealth;
-  document.getElementById('enemy-currentHealth').innerHTML = goblin.currentHealth;
+  $('#enemy-currentHealth')[0].innerHTML = goblin.currentHealth;
 
   $(function() {
     $("#chr-select").on("change",function() {
@@ -77,13 +76,22 @@
       if (chr[0].value == 'fighter') {
         console.log(chr[0].value);
         console.log('fighter');
+        $('#hero-class')[0].innerHTML = fighter.type;
+        $('#hero-currentHealth')[0].innerHTML = fighter.currentHealth;
+        $('#playerImg')[0].src = 'http://bestanimations.com/Fantasy/medieval-knight-animated-gif.gif';
         return;
       } else if (chr[0].value == 'wizard') {
         console.log(chr[0].value);
         console.log('wizard');
+        $('#hero-class')[0].innerHTML = wizard.type;
+        $('#hero-currentHealth')[0].innerHTML = wizard.currentHealth;
+        $('#playerImg')[0].src = 'http://3.bp.blogspot.com/_Us3ZjqQuY6o/TR6boTUXVJI/AAAAAAAAAEI/3oROt9PUOqU/s1600/Wizard-male.gif';
       } else if (chr[0].value == 'thief') {
         console.log(chr[0].value);
         console.log('thief');
+        $('#hero-class')[0].innerHTML = theif.type;
+        $('#hero-currentHealth')[0].innerHTML = theif.currentHealth;
+        $('#playerImg')[0].src = 'https://s-media-cache-ak0.pinimg.com/originals/c4/8e/9c/c48e9c87807c4f1f02632a6cb6ce7b46.jpg';
       }
 
       // if (period=="") return; // please select - possibly you want something else here
