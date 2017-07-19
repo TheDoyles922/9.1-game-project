@@ -5,7 +5,7 @@
     $('select').material_select();
   });
 
-  $("#attack").hide();
+  // $("#attack").hide();
   $('#playAgain').hide();
 
 
@@ -79,7 +79,7 @@
   startButton.onclick = () => {
     console.log("working?");
     $("#form").hide();
-    $("#attack").fadeIn(5000);
+    $("#attack").fadeIn();
 
     let randomEnemy = randomNum();
 
