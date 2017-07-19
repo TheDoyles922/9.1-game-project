@@ -25,10 +25,21 @@
     let enemyAttack = randomNum();
     $('#enemy-currentHealth')[0].innerHTML = goblin.currentHealth -= heroAttack;
     $('#hero-currentHealth')[0].innerHTML = fighter.currentHealth -= enemyAttack;
+
+    if (fighter.currentHealth > goblin.currentHealth) {
+      $('#playerImg')[0].setAttribute('class', 'green-box');
+      $('#goblinImg')[0].setAttribute('class', 'red-box');
+    } else {
+      $('#playerImg')[0].setAttribute('class', 'red-box');
+      $('#goblinImg')[0].setAttribute('class', 'green-box');
+    };
+
     if(goblin.currentHealth <= 0) {
-      window.alert('You Win!!')
+      window.alert('You Win!!');
+      window.location.reload();
     } else if (fighter.currentHealth <= 0) {
-      window.alert('You Lose!!')
+      window.alert('You Lose!!');
+      window.location.reload();
     }
 
     console.log(opponent.currentHealth);
