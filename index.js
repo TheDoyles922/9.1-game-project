@@ -22,11 +22,20 @@
   };
 
   let enemy;
+  let hero;
+  let animation = 'animated shake';
+  let animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd animationEnd';
   Character.prototype.attack = function(opponent) {
     let heroAttack = randomNum();
     let enemyAttack = randomNum();
     $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth -= heroAttack;
-    $('#hero-currentHealth')[0].innerHTML = fighter.currentHealth -= enemyAttack;
+    setTimeout(() => {
+      $('#hero-currentHealth')[0].innerHTML = fighter.currentHealth -= enemyAttack;
+      $('#hero').addClass(animation).one(animationEnd, function() {
+        $(this).removeClass(animation);
+      });
+    }, 1000);
+
 
     if (fighter.currentHealth > enemy.currentHealth) {
       $('#playerImg')[0].setAttribute('class', 'white-box');
@@ -57,18 +66,21 @@
 
   let fighter = new Character("Fighter", 100, 100);
   let wizard = new Character("Wizard", 100, 100);
-  let theif = new Character("Theif", 100, 100);
+  let rogue = new Character("Rogue", 100, 100);
   let goblin = new Character("Goblin", 75, 75);
   let zombie = new Character("Zombie", 100, 100);
   let ogre = new Character("Ogre", 150, 150);
+  let dragon = new Character('Dragon', 250, 250)
 
   let attackButton = document.getElementById('attack');
   let startButton = document.getElementById('startButton');
   let playAgain = document.getElementById('playAgain');
 
-
   attackButton.onclick = () => {
     fighter.attack(enemy);
+    $('#enemy').addClass(animation).one(animationEnd, function() {
+      $(this).removeClass(animation);
+    });
   };
 
   playAgain.onclick = () => {
@@ -103,7 +115,7 @@
       $('#enemy-class')[0].innerHTML = enemy.type;
       $('#enemyImg')[0].src = 'https://media.giphy.com/media/13bD1lqmU6fRbq/giphy.gif';
 
-    } else {
+    } else if (randomEnemy <= 9) {
       enemy = ogre;
       console.log('here', enemy);
       $('#enemyHealth')[0].innerHTML = 'HP: ';
@@ -112,6 +124,13 @@
       $('#enemy-class')[0].innerHTML = enemy.type;
       $('#enemyImg')[0].src = 'https://media.giphy.com/media/XAAGfD6JdUQQE/giphy.gif';
 
+    } else {
+      enemy = dragon;
+      $('#enemyHealth')[0].innerHTML = 'HP: ';
+      $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth;
+      $('#enemy-maxHealth')[0].innerHTML = '/' + enemy.maxHealth;
+      $('#enemy-class')[0].innerHTML = enemy.type;
+      $('#enemyImg')[0].src = 'http://i.imgur.com/oc0QKRV.gif';
     }
   };
 
@@ -124,29 +143,26 @@
       let chr = $(this);
       console.log(chr);
       if (chr[0].value == 'fighter') {
-        console.log(chr[0].value);
-        console.log('fighter');
-        $('#hero-class')[0].innerHTML = fighter.type;
+        hero = fighter;
+        $('#hero-class')[0].innerHTML = hero.type;
         $('#heroHealth')[0].innerHTML = 'HP: ';
-        $('#hero-currentHealth')[0].innerHTML = fighter.currentHealth;
-        $('#hero-maxHealth')[0].innerHTML = '/' + fighter.maxHealth;
+        $('#hero-currentHealth')[0].innerHTML = hero.currentHealth;
+        $('#hero-maxHealth')[0].innerHTML = '/' + hero.maxHealth;
         $('#playerImg')[0].src = 'https://media.tenor.com/images/cf0b99a75c8b9c273163d11013551346/tenor.gif';
         return;
       } else if (chr[0].value == 'wizard') {
-        console.log(chr[0].value);
-        console.log('wizard');
-        $('#hero-class')[0].innerHTML = wizard.type;
+        hero = wizard;
+        $('#hero-class')[0].innerHTML = hero.type;
         $('#heroHealth')[0].innerHTML = 'HP: ';
-        $('#hero-currentHealth')[0].innerHTML = wizard.currentHealth;
-        $('#hero-maxHealth')[0].innerHTML = '/' + wizard.maxHealth;
+        $('#hero-currentHealth')[0].innerHTML = hero.currentHealth;
+        $('#hero-maxHealth')[0].innerHTML = '/' + hero.maxHealth;
         $('#playerImg')[0].src = 'http://66.media.tumblr.com/e58d75df516a2bc5e4c90d1b7f230664/tumblr_o9uoj4AWhj1rlpicfo1_500.gif';
-      } else if (chr[0].value == 'thief') {
-        console.log(chr[0].value);
-        console.log('thief');
-        $('#hero-class')[0].innerHTML = theif.type;
+      } else if (chr[0].value == 'rogue') {
+        hero = rogue;
+        $('#hero-class')[0].innerHTML = hero.type;
         $('#heroHealth')[0].innerHTML = 'HP: ';
-        $('#hero-currentHealth')[0].innerHTML = theif.currentHealth;
-        $('#hero-maxHealth')[0].innerHTML = '/' + theif.maxHealth;
+        $('#hero-currentHealth')[0].innerHTML = hero.currentHealth;
+        $('#hero-maxHealth')[0].innerHTML = '/' + hero.maxHealth;
         $('#playerImg')[0].src = 'https://s-media-cache-ak0.pinimg.com/originals/c4/8e/9c/c48e9c87807c4f1f02632a6cb6ce7b46.jpg';
       }
     });
