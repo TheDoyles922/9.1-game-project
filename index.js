@@ -71,9 +71,9 @@
 
   };
 
-  let fighter = new Character("Fighter", 100, 100);
-  let wizard = new Character("Wizard", 100, 100);
-  let rogue = new Character("Rogue", 100, 100);
+  let fighter = new Character("Fighter", 120, 120);
+  let wizard = new Character("Wizard", 60, 60);
+  let rogue = new Character("Rogue", 80, 80);
   let goblin = new Character("Goblin", 75, 75);
   let zombie = new Character("Zombie", 100, 100);
   let ogre = new Character("Ogre", 150, 150);
@@ -82,6 +82,9 @@
   let attackButton = document.getElementById('attack');
   let startButton = document.getElementById('startButton');
   let playAgain = document.getElementById('playAgain');
+  let bash = document.getElementById('bash');
+  let fireball = document.getElementById('fireball');
+  let poison = document.getElementById('poison');
 
   attackButton.onclick = () => {
     fighter.attack(enemy);
@@ -89,6 +92,32 @@
       $(this).removeClass(animation);
     });
   };
+
+  bash.onclick = () => {
+    $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth -= 10;
+    $('#bash').hide();
+    $('#enemy').addClass(animation).one(animationEnd, function() {
+      $(this).removeClass(animation);
+    });
+  };
+
+  fireball.onclick = () => {
+    $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth -= 30;
+    $('#fireball').hide();
+    $('#enemy').addClass(animation).one(animationEnd, function() {
+      $(this).removeClass(animation);
+    });
+  };
+
+  poison.onclick = () => {
+    $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth -= 20;
+    $('#poison').hide();
+    $('#enemy').addClass(animation).one(animationEnd, function() {
+      $(this).removeClass(animation);
+    });
+  };
+
+
 
   playAgain.onclick = () => {
     window.location.reload();
