@@ -36,6 +36,13 @@
       });
     }, 1000);
 
+    if (heroAttack >= 7 && hero === fighter) {
+      $('#bash').show();
+    } else if (heroAttack >= 7 && hero === wizard) {
+      $('#fireball').show();
+    } else if (heroAttack >= 7 && hero === rogue) {
+      $('#poison').show();
+    }
 
     if (fighter.currentHealth > enemy.currentHealth) {
       $('#playerImg')[0].setAttribute('class', 'white-box');
