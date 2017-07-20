@@ -100,7 +100,7 @@
       $('#enemy-currentHealth')[0].innerHTML = ogre.currentHealth;
       $('#enemy-maxHealth')[0].innerHTML = '/' + ogre.maxHealth;
       $('#enemy-class')[0].innerHTML = ogre.type;
-      $('#enemyImg')[0].src = 'http://33.media.tumblr.com/88b452b82d1120924cddda2873fae1e1/tumblr_nab7ibRLcT1qlp9j9o3_500.gif';
+      $('#enemyImg')[0].src = 'https://media.giphy.com/media/XAAGfD6JdUQQE/giphy.gif';
     }
   };
 
