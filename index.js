@@ -8,13 +8,10 @@
   // $("#attack").hide();
   $('#playAgain').hide();
 
-
   function randomNum() {
     // from 1 to 10
     return Math.floor((Math.random() * 10) + 1);
   };
-
-
 
   class Character {
     constructor(type, currentHealth, maxHealth) {
@@ -24,36 +21,31 @@
     }
   };
 
-
+  let enemy;
   Character.prototype.attack = function(opponent) {
-    console.log(opponent.currentHealth);
     let heroAttack = randomNum();
     let enemyAttack = randomNum();
-    $('#enemy-currentHealth')[0].innerHTML = goblin.currentHealth -= heroAttack;
+    $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth -= heroAttack;
     $('#hero-currentHealth')[0].innerHTML = fighter.currentHealth -= enemyAttack;
 
-    if (fighter.currentHealth > goblin.currentHealth) {
+    if (fighter.currentHealth > enemy.currentHealth) {
       $('#playerImg')[0].setAttribute('class', 'white-box');
       $('#enemyImg')[0].setAttribute('class', 'red-box');
-    } else if (fighter.currentHealth < goblin.currentHealth) {
+    } else if (fighter.currentHealth < enemy.currentHealth) {
       $('#playerImg')[0].setAttribute('class', 'red-box');
       $('#enemyImg')[0].setAttribute('class', 'white-box');
-    } else if (fighter.currentHealth === goblin.currentHealth) {
+    } else if (fighter.currentHealth === enemy.currentHealth) {
       $('#playerImg')[0].setAttribute('class', 'green-box');
       $('#enemyImg')[0].setAttribute('class', 'green-box');
     }
 
-    if(goblin.currentHealth <= 0) {
-      // window.alert('You Win!!');
-      // window.location.reload();
+    if(enemy.currentHealth <= 0) {
       $("#enemy").fadeOut();
       $("#center").fadeOut();
       $('#message')[0].innerHTML = 'You Win!'
       $('#playAgain').show();
       console.log(message.innerHTML);
     } else if (fighter.currentHealth <= 0) {
-      // window.alert('You Lose!!');
-      // window.location.reload();
       $("#hero").fadeOut();
       $("#center").fadeOut();
       $('#message')[0].innerHTML = 'You Lose!'
@@ -63,68 +55,69 @@
 
   };
 
+  let fighter = new Character("Fighter", 100, 100);
+  let wizard = new Character("Wizard", 100, 100);
+  let theif = new Character("Theif", 100, 100);
+  let goblin = new Character("Goblin", 75, 75);
+  let zombie = new Character("Zombie", 100, 100);
+  let ogre = new Character("Ogre", 150, 150);
+
   let attackButton = document.getElementById('attack');
   let startButton = document.getElementById('startButton');
   let playAgain = document.getElementById('playAgain');
 
 
   attackButton.onclick = () => {
-    fighter.attack(goblin);
+    fighter.attack(enemy);
   };
 
   playAgain.onclick = () => {
     window.location.reload();
   };
 
+  let song = new Audio('audio/Eye of the Tiger-Survivor.mp3');
+
   startButton.onclick = () => {
     console.log("working?");
     $("#form").hide();
     $("#attack").fadeIn();
+    song.play();
 
     let randomEnemy = randomNum();
 
+    console.log('goblin', goblin);
+
     if (randomEnemy <= 3) {
+      enemy = goblin;
+      console.log('here', enemy);
       $('#enemyHealth')[0].innerHTML = 'HP: ';
-      $('#enemy-maxHealth')[0].innerHTML = '/' + goblin.maxHealth;
-      $('#enemy-currentHealth')[0].innerHTML = goblin.currentHealth;
-      $('#enemy-class')[0].innerHTML = goblin.type;
+      $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth;
+      $('#enemy-maxHealth')[0].innerHTML = '/' + enemy.maxHealth;
+      $('#enemy-class')[0].innerHTML = enemy.type;
       $('#enemyImg')[0].src = 'https://media.giphy.com/media/QZgUpceTmclgI/giphy.gif';
     } else if (randomEnemy <= 6) {
+      enemy = zombie;
       $('#enemyHealth')[0].innerHTML = 'HP: ';
-      $('#enemy-currentHealth')[0].innerHTML = zombie.currentHealth;
-      $('#enemy-maxHealth')[0].innerHTML = '/' + zombie.maxHealth;
-      $('#enemy-class')[0].innerHTML = zombie.type;
+      $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth;
+      $('#enemy-maxHealth')[0].innerHTML = '/' + enemy.maxHealth;
+      $('#enemy-class')[0].innerHTML = enemy.type;
       $('#enemyImg')[0].src = 'https://media.giphy.com/media/13bD1lqmU6fRbq/giphy.gif';
+
     } else {
+      enemy = ogre;
+      console.log('here', enemy);
       $('#enemyHealth')[0].innerHTML = 'HP: ';
-      $('#enemy-currentHealth')[0].innerHTML = ogre.currentHealth;
-      $('#enemy-maxHealth')[0].innerHTML = '/' + ogre.maxHealth;
-      $('#enemy-class')[0].innerHTML = ogre.type;
+      $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth;
+      $('#enemy-maxHealth')[0].innerHTML = '/' + enemy.maxHealth;
+      $('#enemy-class')[0].innerHTML = enemy.type;
       $('#enemyImg')[0].src = 'https://media.giphy.com/media/XAAGfD6JdUQQE/giphy.gif';
+
     }
   };
-
-
-
-  let fighter = new Character("Fighter", 100, 100);
-
-  let wizard = new Character("Wizard", 100, 100);
-
-  let theif = new Character("Theif", 100, 100);
-
-  let goblin = new Character("Goblin", 100, 100);
-
-  let zombie = new Character("Zombie", 100, 100);
-
-  let ogre = new Character("Ogre", 100, 100);
-
-
 
   // document.getElementById('hero-maxHealth').innerHTML = fighter.maxHealth;
   // document.getElementById('enemy-maxHealth').innerHTML = goblin.maxHealth;
   // $('#enemy-currentHealth')[0].innerHTML = goblin.currentHealth;
-
-
 
   $(function() {
     $("#chr-select").on("change",function() {

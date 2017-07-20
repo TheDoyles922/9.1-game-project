@@ -75,3 +75,7 @@ h4 {
 #attack {
   transition: none;
 }
+
+#music-player {
+  display: none;
+}
