@@ -34,6 +34,13 @@
       $('#hero').addClass(animation).one(animationEnd, function() {
         $(this).removeClass(animation);
       });
+      if (hero.currentHealth <= 0) {
+        $("#hero").fadeOut();
+        $("#center").fadeOut();
+        $('#message')[0].innerHTML = 'You Lose!'
+        $('#playAgain').show();
+        console.log(message.innerHTML);
+      }
     }, 1000);
 
     if (heroAttack >= 7 && hero === fighter) {
@@ -67,7 +74,8 @@
       $('#message')[0].innerHTML = 'You Win!'
       $('#playAgain').show();
       console.log(message.innerHTML);
-    } else if (hero.currentHealth <= 0) {
+    }
+    if (hero.currentHealth <= 0) {
       $("#hero").fadeOut();
       $("#center").fadeOut();
       $('#message')[0].innerHTML = 'You Lose!'
