@@ -55,6 +55,17 @@
       setTimeout(() => {
         $('#poison').show();
       }, 2000);
+    } else if (heroAttack >= 5 && hero === archer) {
+      setTimeout(() => {
+        $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth -= heroAttack;
+        if(enemy.currentHealth <= 0) {
+          $("#enemy").fadeOut();
+          $("#center").fadeOut();
+          $('#message')[0].innerHTML = 'You Win!'
+          $('#playAgain').show();
+          console.log(message.innerHTML);
+        }
+      }, 2000);
     }
 
     if (hero.currentHealth > enemy.currentHealth) {
@@ -86,12 +97,13 @@
 
 
 
-  let fighter = new Character("Fighter", 120, 120);
-  let wizard = new Character("Wizard", 60, 60);
-  let rogue = new Character("Rogue", 80, 80);
-  let goblin = new Character("Goblin", 75, 75);
-  let zombie = new Character("Zombie", 100, 100);
-  let ogre = new Character("Ogre", 150, 150);
+  let fighter = new Character('Fighter', 120, 120);
+  let wizard = new Character('Wizard', 60, 60);
+  let rogue = new Character('Rogue', 80, 80);
+  let archer = new Character('Archer', 70, 70)
+  let goblin = new Character('Goblin', 75, 75);
+  let zombie = new Character('Zombie', 100, 100);
+  let ogre = new Character('Ogre', 150, 150);
   let dragon = new Character('Dragon', 250, 250)
 
   let attackButton = document.getElementById('attack');
@@ -240,6 +252,13 @@
         $('#hero-currentHealth')[0].innerHTML = hero.currentHealth;
         $('#hero-maxHealth')[0].innerHTML = '/' + hero.maxHealth;
         $('#playerImg')[0].src = 'https://s-media-cache-ak0.pinimg.com/originals/c4/8e/9c/c48e9c87807c4f1f02632a6cb6ce7b46.jpg';
+      } else if (chr[0].value == 'archer') {
+        hero = archer;
+        $('#hero-class')[0].innerHTML = hero.type;
+        $('#heroHealth')[0].innerHTML = 'HP: ';
+        $('#hero-currentHealth')[0].innerHTML = hero.currentHealth;
+        $('#hero-maxHealth')[0].innerHTML = '/' + hero.maxHealth;
+        $('#playerImg')[0].src = 'http://49.media.tumblr.com/f05972c30d931efded9faead1acd53ac/tumblr_nxexb18MK01qlp9j9o3_r1_500.gif';
       }
     });
   });
