@@ -102,6 +102,7 @@
   let rogue = new Character('Rogue', 80, 80);
   let archer = new Character('Archer', 70, 70)
   let goblin = new Character('Goblin', 75, 75);
+  let necromancer = new Character('Necromancer', 120, 120)
   let zombie = new Character('Zombie', 100, 100);
   let ogre = new Character('Ogre', 150, 150);
   let dragon = new Character('Dragon', 250, 250)
@@ -184,10 +185,10 @@
     song.play();
 
     let randomEnemy = randomNum();
-
+    console.log(randomEnemy);
     console.log('goblin', goblin);
 
-    if (randomEnemy <= 3) {
+    if (randomEnemy <= 2) {
       enemy = goblin;
       console.log('here', enemy);
       $('#enemyHealth')[0].innerHTML = 'HP: ';
@@ -195,15 +196,14 @@
       $('#enemy-maxHealth')[0].innerHTML = '/' + enemy.maxHealth;
       $('#enemy-class')[0].innerHTML = enemy.type;
       $('#enemyImg')[0].src = 'https://media.giphy.com/media/QZgUpceTmclgI/giphy.gif';
-    } else if (randomEnemy <= 6) {
+    } else if (randomEnemy <= 4) {
       enemy = zombie;
       $('#enemyHealth')[0].innerHTML = 'HP: ';
       $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth;
       $('#enemy-maxHealth')[0].innerHTML = '/' + enemy.maxHealth;
       $('#enemy-class')[0].innerHTML = enemy.type;
       $('#enemyImg')[0].src = 'https://media.giphy.com/media/13bD1lqmU6fRbq/giphy.gif';
-
-    } else if (randomEnemy <= 9) {
+    } else if (randomEnemy <= 6) {
       enemy = ogre;
       console.log('here', enemy);
       $('#enemyHealth')[0].innerHTML = 'HP: ';
@@ -212,6 +212,14 @@
       $('#enemy-class')[0].innerHTML = enemy.type;
       $('#enemyImg')[0].src = 'https://media.giphy.com/media/XAAGfD6JdUQQE/giphy.gif';
 
+    } else if (randomEnemy <= 9) {
+      enemy = necromancer;
+      console.log('here', enemy);
+      $('#enemyHealth')[0].innerHTML = 'HP: ';
+      $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth;
+      $('#enemy-maxHealth')[0].innerHTML = '/' + enemy.maxHealth;
+      $('#enemy-class')[0].innerHTML = enemy.type;
+      $('#enemyImg')[0].src = 'https://media.giphy.com/media/1ZJRNwwUesXW8/200.gif';
     } else {
       enemy = dragon;
       $('#enemyHealth')[0].innerHTML = 'HP: ';

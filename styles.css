@@ -4,6 +4,21 @@
   padding: 0;
 }
 
+body {
+  background-image: url('http://orig03.deviantart.net/ecd5/f/2007/324/e/d/scary_dungeon_by_craig_stiff.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper {
+  width: 80vw;
+  height: 100vh;
+  margin: 0 auto;
+  /*background-color: black;*/
+  margin-top: -40px;
+}
+
 .flex {
   display: flex;
 }
