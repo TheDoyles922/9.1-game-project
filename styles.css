@@ -39,7 +39,7 @@ body {
 img {
   height: 400px;
   width: 400px;
-  border-radius: 50%;
+  /*border-radius: 25%;*/
 }
 
 .vertalign {

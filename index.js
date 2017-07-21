@@ -95,16 +95,14 @@
     }
   };
 
-
-
   let fighter = new Character('Fighter', 120, 120);
   let wizard = new Character('Wizard', 60, 60);
   let rogue = new Character('Rogue', 80, 80);
   let archer = new Character('Archer', 70, 70)
   let goblin = new Character('Goblin', 75, 75);
-  let necromancer = new Character('Necromancer', 120, 120)
-  let zombie = new Character('Zombie', 100, 100);
-  let ogre = new Character('Ogre', 150, 150);
+  let warlock = new Character('Warlock', 120, 120)
+  let deathKnight = new Character('Death Knight', 150, 150);
+  let orc = new Character('Orc', 130, 130);
   let dragon = new Character('Dragon', 250, 250)
 
   let attackButton = document.getElementById('attack');
@@ -170,8 +168,6 @@
     }
   };
 
-
-
   playAgain.onclick = () => {
     window.location.reload();
   };
@@ -197,23 +193,23 @@
       $('#enemy-class')[0].innerHTML = enemy.type;
       $('#enemyImg')[0].src = 'https://media.giphy.com/media/QZgUpceTmclgI/giphy.gif';
     } else if (randomEnemy <= 4) {
-      enemy = zombie;
+      enemy = deathKnight;
       $('#enemyHealth')[0].innerHTML = 'HP: ';
       $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth;
       $('#enemy-maxHealth')[0].innerHTML = '/' + enemy.maxHealth;
       $('#enemy-class')[0].innerHTML = enemy.type;
-      $('#enemyImg')[0].src = 'https://media.giphy.com/media/13bD1lqmU6fRbq/giphy.gif';
+      $('#enemyImg')[0].src = 'https://68.media.tumblr.com/cf3109feb4fe951d347072b7a5014129/tumblr_o3wv8dQiCg1ujsoyno1_500.gif';
     } else if (randomEnemy <= 6) {
-      enemy = ogre;
+      enemy = orc;
       console.log('here', enemy);
       $('#enemyHealth')[0].innerHTML = 'HP: ';
       $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth;
       $('#enemy-maxHealth')[0].innerHTML = '/' + enemy.maxHealth;
       $('#enemy-class')[0].innerHTML = enemy.type;
-      $('#enemyImg')[0].src = 'https://media.giphy.com/media/XAAGfD6JdUQQE/giphy.gif';
+      $('#enemyImg')[0].src = 'http://33.media.tumblr.com/88b452b82d1120924cddda2873fae1e1/tumblr_nab7ibRLcT1qlp9j9o3_500.gif';
 
     } else if (randomEnemy <= 9) {
-      enemy = necromancer;
+      enemy = warlock;
       console.log('here', enemy);
       $('#enemyHealth')[0].innerHTML = 'HP: ';
       $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth;
@@ -230,10 +226,6 @@
     }
   };
 
-  // document.getElementById('hero-maxHealth').innerHTML = fighter.maxHealth;
-  // document.getElementById('enemy-maxHealth').innerHTML = goblin.maxHealth;
-  // $('#enemy-currentHealth')[0].innerHTML = goblin.currentHealth;
-
   $(function() {
     $("#chr-select").on("change",function() {
       let chr = $(this);
@@ -244,7 +236,7 @@
         $('#heroHealth')[0].innerHTML = 'HP: ';
         $('#hero-currentHealth')[0].innerHTML = hero.currentHealth;
         $('#hero-maxHealth')[0].innerHTML = '/' + hero.maxHealth;
-        $('#playerImg')[0].src = 'https://media.tenor.com/images/cf0b99a75c8b9c273163d11013551346/tenor.gif';
+        $('#playerImg')[0].src = 'https://static.comicvine.com/uploads/original/14/142946/5035290-43.gif';
         return;
       } else if (chr[0].value == 'wizard') {
         hero = wizard;
@@ -252,7 +244,7 @@
         $('#heroHealth')[0].innerHTML = 'HP: ';
         $('#hero-currentHealth')[0].innerHTML = hero.currentHealth;
         $('#hero-maxHealth')[0].innerHTML = '/' + hero.maxHealth;
-        $('#playerImg')[0].src = 'http://66.media.tumblr.com/e58d75df516a2bc5e4c90d1b7f230664/tumblr_o9uoj4AWhj1rlpicfo1_500.gif';
+        $('#playerImg')[0].src = 'https://68.media.tumblr.com/1f2db7c53aeccb04536d8f37957bd2b3/tumblr_o7n3ihqvyX1sk8j96o1_500.gif';
       } else if (chr[0].value == 'rogue') {
         hero = rogue;
         $('#hero-class')[0].innerHTML = hero.type;
