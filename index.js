@@ -30,27 +30,33 @@
     let enemyAttack = randomNum();
     $('#enemy-currentHealth')[0].innerHTML = enemy.currentHealth -= heroAttack;
     setTimeout(() => {
-      $('#hero-currentHealth')[0].innerHTML = fighter.currentHealth -= enemyAttack;
+      $('#hero-currentHealth')[0].innerHTML = hero.currentHealth -= enemyAttack;
       $('#hero').addClass(animation).one(animationEnd, function() {
         $(this).removeClass(animation);
       });
     }, 1000);
 
     if (heroAttack >= 7 && hero === fighter) {
-      $('#bash').show();
+      setTimeout(() => {
+        $('#bash').show();
+      }, 2000);
     } else if (heroAttack >= 7 && hero === wizard) {
-      $('#fireball').show();
+      setTimeout(() => {
+        $('#fireball').show();
+      }, 2000);
     } else if (heroAttack >= 7 && hero === rogue) {
-      $('#poison').show();
+      setTimeout(() => {
+        $('#poison').show();
+      }, 2000);
     }
 
-    if (fighter.currentHealth > enemy.currentHealth) {
+    if (hero.currentHealth > enemy.currentHealth) {
       $('#playerImg')[0].setAttribute('class', 'white-box');
       $('#enemyImg')[0].setAttribute('class', 'red-box');
-    } else if (fighter.currentHealth < enemy.currentHealth) {
+    } else if (hero.currentHealth < enemy.currentHealth) {
       $('#playerImg')[0].setAttribute('class', 'red-box');
       $('#enemyImg')[0].setAttribute('class', 'white-box');
-    } else if (fighter.currentHealth === enemy.currentHealth) {
+    } else if (hero.currentHealth === enemy.currentHealth) {
       $('#playerImg')[0].setAttribute('class', 'green-box');
       $('#enemyImg')[0].setAttribute('class', 'green-box');
     }
@@ -61,15 +67,16 @@
       $('#message')[0].innerHTML = 'You Win!'
       $('#playAgain').show();
       console.log(message.innerHTML);
-    } else if (fighter.currentHealth <= 0) {
+    } else if (hero.currentHealth <= 0) {
       $("#hero").fadeOut();
       $("#center").fadeOut();
       $('#message')[0].innerHTML = 'You Lose!'
       $('#playAgain').show();
       console.log(message.innerHTML);
     }
-
   };
+
+
 
   let fighter = new Character("Fighter", 120, 120);
   let wizard = new Character("Wizard", 60, 60);
@@ -87,10 +94,14 @@
   let poison = document.getElementById('poison');
 
   attackButton.onclick = () => {
-    fighter.attack(enemy);
+    hero.attack(enemy);
     $('#enemy').addClass(animation).one(animationEnd, function() {
       $(this).removeClass(animation);
     });
+    $('#attack').hide();
+    setTimeout(() => {
+      $('#attack').show()
+    }, 2000);
   };
 
   bash.onclick = () => {
@@ -99,6 +110,13 @@
     $('#enemy').addClass(animation).one(animationEnd, function() {
       $(this).removeClass(animation);
     });
+    if(enemy.currentHealth <= 0) {
+      $("#enemy").fadeOut();
+      $("#center").fadeOut();
+      $('#message')[0].innerHTML = 'You Win!'
+      $('#playAgain').show();
+      console.log(message.innerHTML);
+    }
   };
 
   fireball.onclick = () => {
@@ -107,6 +125,13 @@
     $('#enemy').addClass(animation).one(animationEnd, function() {
       $(this).removeClass(animation);
     });
+    if(enemy.currentHealth <= 0) {
+      $("#enemy").fadeOut();
+      $("#center").fadeOut();
+      $('#message')[0].innerHTML = 'You Win!'
+      $('#playAgain').show();
+      console.log(message.innerHTML);
+    }
   };
 
   poison.onclick = () => {
@@ -115,6 +140,13 @@
     $('#enemy').addClass(animation).one(animationEnd, function() {
       $(this).removeClass(animation);
     });
+    if(enemy.currentHealth <= 0) {
+      $("#enemy").fadeOut();
+      $("#center").fadeOut();
+      $('#message')[0].innerHTML = 'You Win!'
+      $('#playAgain').show();
+      console.log(message.innerHTML);
+    }
   };
 
 
